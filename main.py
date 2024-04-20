@@ -5,9 +5,16 @@ import os
 import csv
 
 #root_dir = r"C:\Users\micro\OneDrive\Documents\FrameView\Surface Laptop Studio NEW"
+#target_file = f"C:/Users/micro/OneDrive/Documents/FrameView/sls_complete.csv"
 
-root_dir = r"C:\Users\micro\OneDrive\Documents\FrameView\Versions"
-target_file = f"C:/Users/micro/OneDrive/Documents/FrameView/upscaling_dlss_versions_complete.csv"
+root_dir = r"C:\Users\micro\OneDrive\Documents\FrameView\Upscaling + FG"
+target_file = f"C:/Users/micro/OneDrive/Documents/FrameView/upscaling_fg_complete.csv"
+
+#root_dir = r"C:\Users\micro\OneDrive\Documents\FrameView\Upscaling + DLSS FG + RayReconstruction"
+#target_file = f"C:/Users/micro/OneDrive/Documents/FrameView/upscaling_dlss_fg_rr_complete.csv"
+
+#root_dir = r"C:\Users\micro\OneDrive\Documents\FrameView\Versions"
+#target_file = f"C:/Users/micro/OneDrive/Documents/FrameView/upscaling_dlss_versions_complete.csv"
  
 
 def handle_csv(file_path, game, cap, tech, config):
@@ -162,7 +169,7 @@ def main():
 
     with open(target_file, 'a', newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        writer.writerow(["Name", "Sum frames", "Sum frame time", "Sum GPU Energy", "Average GPU Power", "Total Perf Per Watt", "Average_frame_time", "Average FPS", "Average GPU frame energy", "", "Sum CPU Energy", "Average CPU Power", "Average CPU Frame energy", "Average GPU Temp", "Average CPU Temp", "Average GPU Util", "Average CPU Util", "Average GPU Clk", "Average GPU Mem Clk", "Average CPU Clk"])
+        writer.writerow(["Name", "Sum frames", "Sum frame time", "Sum GPU Energy", "Average GPU Power", "Total Perf Per Watt", "Average_frame_time", "Average FPS", "Average GPU frame energy", "Sum CPU Energy", "Average CPU Power", "Average CPU Frame energy", "Average GPU Temp", "Average CPU Temp", "Average GPU Util", "Average CPU Util", "Average GPU Clk", "Average GPU Mem Clk", "Average CPU Clk"])
 
     for game_dir in os.listdir(root_dir):
         game_dir_path = os.path.join(root_dir, game_dir)
