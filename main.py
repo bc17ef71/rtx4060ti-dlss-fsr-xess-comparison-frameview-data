@@ -4,17 +4,16 @@ import time
 import os
 import csv
 
-#root_dir = r"C:\Users\micro\OneDrive\Documents\FrameView\Surface Laptop Studio NEW"
-#target_file = f"C:/Users/micro/OneDrive/Documents/FrameView/sls_complete.csv"
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
-root_dir = r"C:\Users\micro\OneDrive\Documents\FrameView\Upscaling + FG"
-target_file = f"C:/Users/micro/OneDrive/Documents/FrameView/upscaling_fg_complete.csv"
+# U+FG = Upscaling + Frame generation
+# U+FG+RR = Upscaling + Frame generation + Ray reconstruction
+# Versions = DLSS binary versions
 
-#root_dir = r"C:\Users\micro\OneDrive\Documents\FrameView\Upscaling + DLSS FG + RayReconstruction"
-#target_file = f"C:/Users/micro/OneDrive/Documents/FrameView/upscaling_dlss_fg_rr_complete.csv"
+experiment = "U+FG"
 
-#root_dir = r"C:\Users\micro\OneDrive\Documents\FrameView\Versions"
-#target_file = f"C:/Users/micro/OneDrive/Documents/FrameView/upscaling_dlss_versions_complete.csv"
+root_dir = os.path.join(dir_path, "U+FG")
+target_file = os.path.join(dir_path, "upscaling_fg_complete.csv")
  
 
 def handle_csv(file_path, game, cap, tech, config):
